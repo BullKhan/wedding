@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+* { margin:0; padding:0; box-sizing: border-box; }
+a { text-decoration: none; color:inherit; }
+ul { list-style-type: none; }
+img { max-width:100%; vertical-align: middle; } 
+table { border-collapse: collapse; width:100% }
+
+.row { max-width:980px; margin:0 auto; }
+html, body, #wrap, #header { height: 100%;}
+
+#header{
+    background: url(../img/wedding_couple.jpg) no-repeat center;
+    background-size: cover;
+    /* #title의 absolute 사용시 사용. */
+    position: relative;
+}
+#header #title { color:#fff; text-align: center;
+    position: absolute; top:50%; left:50%;
+    /* background: red; */
+    margin-top: -112.5px; margin-left:-190.5px;
+}
+#header #title h1 { font-size: 64px; }      
+#header #title p { font-size: 30px; margin:20px 0;}
+    /* 부모요소에서 필터 속성을 준 상태에서는 
+        자식 요소를 position:fixed 는 작동하지 않는다. */
+    /* 필터를 꼭 주어야한다면, 자식요소를
+        부모요소(필터가 존재하는 곳) 이외에서 fixed 처리한다. */
+#nav{
+    background:rgba(255,255,255,0.75);
+    padding:5px 10px;
+    /* fixed : 활성창 기준 고정 */
+    position: fixed; width:100%; left:0; bottom:0; z-index:99;
+}
+#nav li{
+    display: inline-block; width:25%; text-align: center;
+}
+#nav ul li a{
+    display:block; padding:10px 0;
+}
+#nav ul li:hover a{
+    background: rgba(200,200,200,1);
+}
+#nav ul li:last-child:hover a{
+    background: rgba(0,0,0,1);
+    color:#fff;
+}
+
+/* #section{  } */
+#section img{ width: 100%; border-radius: 5px; }
+#section h2{ 
+    color: #757575; font-size: 36px;
+    text-align: center; padding-bottom:64px;
+}
+.article1, .article3, .article4 {
+    padding:64px 16px; background: #fdd;
+}
+.article1 p {
+    padding: 48px 20px; font-style: italic;
+    font-size: 15px; line-height: 2em;
+}
+.btn {text-align: center;}
+.btn a{
+    background: #000; color: #fff; font-size: 18px;
+    padding:18px 24px;
+    border-radius: 5px;
+}
+.btn a:hover{ background: #ccc; color: #000; }
+
+#section, .article2 {
+    height: 100%;
+}
+.article2 {
+    background: url(../img/flowers.jpg) no-repeat center;
+    background-size: cover; color:#fff; text-align: center;
+    position: relative;
+}
+.article2 .article2_textbox {
+    position: absolute; left:50%; top:50%;
+    margin-left:-226px; margin-top: -82.5px;
+}
+.article2 p:first-child { font-size: 64px; padding-bottom: 40px;}
+.article2 p:last-child { font-size: 30px; }
+
+.article3 .location { 
+    display: table; width: 100%;
+    text-align: center;
+    padding-top: 64px; font-size: 15px;
+}
+.article3 .location > div {
+    display: table-cell; width:50%;
+}
+.article3 h3 { font-size: 30px; }
+.article3 .location > div p:nth-of-type(1) { margin:20px 0; }
+
+#header, .article1, .article3{ filter: grayscale(50%); }
+.article3 img{ filter: grayscale(70%); }
+/* 필터는 올드 버전에서는 적용안됨. */
+
+.article4 { text-align: center; }
+.article4 p:nth-child(1) { font-size: 36px; }
+.article4 p:nth-child(2) { 
+    font-size: 18px; margin:20px 0 50px;
+}
+
+.article4 .btn a {
+    background: #f44336; padding:18px 60px;
+    opacity: 0.6; font-size: 24px;
+}
+.article4 .btn a:hover {
+    background: #ccc; color:#000;
+}
+/* 
+    section의 높이를 100%로 설정하면 동생인 footer는
+    section의 자식들 밑에 숨어서 안보이게 됨.
+    이럴때는 footer를 section의 동생이 아닌, 마지막 자식으로
+    변경한다.
+*/
+#footer { 
+    background: #000; color:#fff;
+    text-align: center; padding: 30px 0 80px;
+    margin-bottom: 30px;
+}
+#footer a {
+    text-decoration: underline;
+}
+#footer a:hover {
+    color:green;
+}
