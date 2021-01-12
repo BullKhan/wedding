@@ -1,3 +1,3 @@
 # wedding
 
-https://bullkhan.github.io/wedding/.
+https://bullkhan.github.io/wedding/
